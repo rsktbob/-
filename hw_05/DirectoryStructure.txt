@@ -1,0 +1,10 @@
+my_data
+	jpg
+	png
+	gif
+	data
+		txt
+		dat
+	python
+		py
+		ipynb
