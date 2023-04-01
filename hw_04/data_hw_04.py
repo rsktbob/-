@@ -3,6 +3,34 @@ import shutil
 import os
 
 
+def show_dir0(dirs, header=''):
+    for dk in dirs:
+        os.mkdir(header+dk)
+        if isinstance(dirs[dk], dict):
+            show_dir0(dirs[dk], header+dk+'/')
+
+
+time = date(2023, 2, 23)
+for i in range(18):
+    print(time.strftime('%Y-%m%d'))
+    time += timedelta(weeks=1)
+
+#-----------------------------------------------
+    
+with open('ReadMe.txt', 'rb') as file:
+    read = file.read()
+    for i in range(200):
+        lst = bytearray(read)
+        for j in range(len(lst)):
+            lst[j] ^= i
+        try:
+            print(f'{i}' + " " + lst.decode())
+        except:
+            pass
+
+# -----------------------------------------------
+
+
 class Vector3:
     def __init__(self, x, y, z):
         self.x = x
@@ -35,38 +63,22 @@ class Vector3:
     def show(self):
         print(f'<{self.x} {self.y} {self.z}>')
 
+A = Vector3(2, 6, 7)
+B = Vector3(3, 5, 2)
+(A + B).show()
+(A - B).show()
+(A * B).show()
+(A * 3).show()
+(A * B + B * A).show()
+
+#-----------------------------------------------
+
 def show_dir0(dirs, header=''):
     for dk in dirs:
         os.mkdir(header+dk)
         if isinstance(dirs[dk], dict):
-           show_dir0(dirs[dk],header+dk+'/')
+            show_dir0(dirs[dk], header+dk+'/')
 
-
-if __name__ == '__main__':
-    time = date(2023, 2, 23)
-    for i in range(18):
-        print(time.strftime('%Y-%m%d'))
-        time += timedelta(weeks=1)
-    print('---------------------')
-    with open('ReadMe.txt', 'rb') as file:
-        read = file.read()
-        for i in range(200):
-            lst = bytearray(read)
-            for j in range(len(lst)):
-                lst[j] ^= i
-            try:
-                print(f'{i}' + " " + lst.decode())
-            except:
-                pass
-    print('---------------------')
-    A = Vector3(2, 6, 7)
-    B = Vector3(3, 5, 2)
-    (A + B).show()
-    (A - B).show()
-    (A * B).show()
-    (A * 3).show()
-    (A * B + B * A).show()
-    print('---------------------')
-    dirs = {'my_data': {'jpg':"", 'png':"", 'gif':"", 'data':{'txt':"", 'dat':""}, 
-                    'python':{'py':"", 'ipynb':""}} }
-    show_dir0(dirs)
+dirs = {'my_data': {'jpg': "", 'png': "", 'gif': "", 'data': {'txt': "", 'dat': ""},
+                'python': {'py': "", 'ipynb': ""}}}
+show_dir0(dirs)
