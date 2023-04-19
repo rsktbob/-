@@ -1,19 +1,5 @@
 from datetime import timedelta, date
-import shutil
 import os
-
-
-def show_dir0(dirs, header=''):
-    for dk in dirs:
-        os.mkdir(header+dk)
-        if isinstance(dirs[dk], dict):
-            show_dir0(dirs[dk], header+dk+'/')
-
-
-time = date(2023, 2, 23)
-for i in range(18):
-    print(time.strftime('%Y-%m%d'))
-    time += timedelta(weeks=1)
 
 #-----------------------------------------------
     
@@ -72,6 +58,18 @@ B = Vector3(3, 5, 2)
 (A * B + B * A).show()
 
 #-----------------------------------------------
+
+def show_dir0(dirs, header=''):
+    for dk in dirs:
+        os.mkdir(header+dk)
+        if isinstance(dirs[dk], dict):
+            show_dir0(dirs[dk], header+dk+'/')
+
+
+time = date(2023, 2, 23)
+for i in range(18):
+    print(time.strftime('%Y-%m%d'))
+    time += timedelta(weeks=1)
 
 def show_dir0(dirs, header=''):
     for dk in dirs:

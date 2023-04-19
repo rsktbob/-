@@ -57,7 +57,6 @@ def catch_image(url):
     images= BeautifulSoup(response.content, "html.parser").find_all("img")
     
     try:
-        os.makedirs("images")
         create_images_to_folder('images', images)
     except:
         pass
