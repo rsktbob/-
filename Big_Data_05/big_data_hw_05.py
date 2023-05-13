@@ -1,21 +1,6 @@
 import os
 from functools import reduce
 
-
-def combination(n, r):
-    return reduce(lambda x,y : x*y, [i for i in range(n, n-r, -1)]) / reduce(lambda x, y: x*y, [i for i in range(1, r+1)])
-
-def permutation(n, r):
-    return reduce(lambda x,y : x*y, [i for i in range(n, n-r, -1)])
-
-def gcf(a, b):
-    while (a != 0):
-        key = a
-        a = b % a
-        b = key
-    return b
-
-'''
 with open('DirectoryStructure.txt', 'r') as contents:
 
     lst = contents.read()
@@ -23,7 +8,6 @@ with open('DirectoryStructure.txt', 'r') as contents:
     header = []
     contents = ''
     for i in range(len(lst)):
-        num = 0
         num = lst[i].count('\t')
         header = header[:num]
         header.append(lst[i].strip())
@@ -36,6 +20,7 @@ with open('DirectoryStructure.txt', 'r') as contents:
 
 # ------------------------------------------------
 
+'''
 with open('DirectoryStructure.txt', 'r') as contents:
 
     lst = contents.read()
@@ -136,8 +121,3 @@ B = Vector3(3, 5, 2)
 (4 * B).show()
 (A * B + B * A).show()
 '''
-
-S = 1140
-A = 392
-print(A / S)
-print(5 ** 5)
