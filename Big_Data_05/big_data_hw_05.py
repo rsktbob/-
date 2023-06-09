@@ -20,7 +20,6 @@ with open('DirectoryStructure.txt', 'r') as contents:
 
 # ------------------------------------------------
 
-'''
 with open('DirectoryStructure.txt', 'r') as contents:
 
     lst = contents.read()
@@ -120,4 +119,3 @@ B = Vector3(3, 5, 2)
 (A * 3.0).show()
 (4 * B).show()
 (A * B + B * A).show()
-'''
