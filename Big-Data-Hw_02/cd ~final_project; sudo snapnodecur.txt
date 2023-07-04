@@ -1,0 +1,1 @@
+cd ~/final_project/; sudo /snap/node/current/bin/node index.mjs
